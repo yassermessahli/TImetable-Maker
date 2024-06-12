@@ -1,6 +1,6 @@
 from variables_domains import Slot, days, slots_per_day, CourseSession , all_slots , groups , courses , variables
 
-def no_more_than_three_successive(*args):
+def no_more_than_three_successive(args):
     # Extract the slots from the CourseSession objects
     slots = [arg.slot for arg in args]
     
@@ -31,7 +31,7 @@ variables[22].slot = Slot(day='Sunday', time=2)
 variables[3].slot = Slot(day='Sunday', time=3) 
 variables[4].slot = Slot(day='Sunday', time=4)
 
-print(no_more_than_three_successive(variables[22],variables[3],variables[4],variables[1]))
+print(no_more_than_three_successive([variables[22],variables[3],variables[4],variables[1]]))
 # False car 
 
 
@@ -41,4 +41,4 @@ variables[2].slot = Slot(day='Sunday', time=2)
 variables[3].slot = Slot(day='Sunday', time=3) 
 variables[4].slot = Slot(day='Sunday', time=4)
 
-print(no_more_than_three_successive(variables[1],variables[2],variables[3],variables[4]))
+print(no_more_than_three_successive([variables[1],variables[2],variables[3],variables[4]]))

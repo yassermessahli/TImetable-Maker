@@ -1,6 +1,6 @@
 from variables_domains import Slot, days, slots_per_day, CourseSession , all_slots , groups , courses , variables
 
-def no_same_slot_lectures(*args):
+def no_same_slot_lectures(args):
     """
     Lectures of the different courses should not be in the same slot
     """
@@ -25,9 +25,9 @@ def no_same_slot_lectures(*args):
 variables[2].slot = Slot(day='Sunday', time=2)
 variables[0].slot = Slot(day='Sunday', time=1)
 
-print(no_same_slot_lectures(variables[0],variables[2])) # True
+print(no_same_slot_lectures([variables[0],variables[2]])) # True
 
 variables[2].slot = Slot(day='Sunday', time=2)
 variables[0].slot = Slot(day='Sunday', time=2)
 
-print(no_same_slot_lectures(variables[0],variables[2])) # False
+print(no_same_slot_lectures([variables[0],variables[2]])) # False

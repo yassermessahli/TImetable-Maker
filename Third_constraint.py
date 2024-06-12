@@ -2,7 +2,7 @@ from variables_domains import Slot, days, slots_per_day, CourseSession , all_slo
 
 
 
-def no_same_slot_different_courses(*args):
+def no_same_slot_different_courses(args):
     """
     we are going to check if the same slot is not allocated to different courses for the same group
     """
@@ -33,10 +33,10 @@ def no_same_slot_different_courses(*args):
 variables[0].slot = Slot(day='Sunday', time=1)
 variables[1].slot = Slot(day='Sunday', time=2)
 
-print(no_same_slot_different_courses(variables[0],variables[1])) # True
+print(no_same_slot_different_courses([variables[0],variables[1]])) # True
 
 
 variables[0].slot = Slot(day='Sunday', time=1)
 variables[1].slot = Slot(day='Sunday', time=1)
 
-print(no_same_slot_different_courses(variables[0],variables[1])) # False
+print(no_same_slot_different_courses([variables[0],variables[1]])) # False

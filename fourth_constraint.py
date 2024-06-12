@@ -2,7 +2,7 @@ from variables_domains import Slot, days, slots_per_day, CourseSession , all_slo
 
 
 
-def no_same_slot_different_groups_same_td(*args):
+def no_same_slot_different_groups_same_td(args):
     """
     we are going to check if the same slot is not allocated to different groups for the same td course
     """
@@ -10,14 +10,16 @@ def no_same_slot_different_groups_same_td(*args):
     td_slots = {}
 
     for arg in args:
-            if arg.session_type == "td":
+            if arg.session_type in ["td" , 'tp']:
                 # If the slot already has an assignment for "td" or "tp", check if it's from a different course
                 if arg.slot in td_slots:
-                    if td_slots[arg.slot] == arg.course:
+                    if arg.teacher in td_slots[arg.slot] :
                         return False
+                    else :
+                         td_slots[arg.slot].append(arg.teacher)
                 else:
                     # Otherwise, record the assignment
-                    td_slots[arg.slot] = arg.course
+                    td_slots[arg.slot] = [arg.teacher]
 
     return True
 
@@ -29,4 +31,4 @@ print(variables[22])
 variables[1].slot = Slot(day='Sunday', time=1)
 variables[22].slot = Slot(day='Sunday', time=1)
 
-print(no_same_slot_different_groups_same_td(variables[1],variables[22])) # False
+print(no_same_slot_different_groups_same_td([variables[1],variables[22]])) 
