@@ -73,10 +73,3 @@ for group in groups:
                     break
         else:
             variables.append(CourseSession(group, course, session_type, teacher))
-
-
-# print only tp sessions
-# print("== TP Sessions: ==")
-# for v in variables:
-#     if v.session_type == "tp":
-#         print(v)

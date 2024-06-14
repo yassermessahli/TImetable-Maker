@@ -1,8 +1,8 @@
 import pandas as pd
 
-import df_to_html
-import helper_functions as hf
-import open_file
+import output.df_to_html as df_to_html
+import output.helper_functions as hf
+import output.open_file as open_file
 
 def visualise_timetable(variables):
     # convert variables to dictionary

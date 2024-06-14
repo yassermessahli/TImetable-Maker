@@ -1,12 +1,10 @@
 class CSP:
     """The implementation of csp problem and its solution"""
-    i = 0
     
     def __init__(self, variables: list, domains, constraints: list) -> None:
         self.variables = variables
         self.domains = domains
         self.constraints = constraints
-        self.assignment = {}
         
     def __str__(self) -> str:
         return self.variables
@@ -45,7 +43,6 @@ class CSP:
             variable.slot = value
             if self.is_consistent():
                 result = self.backtrack()
-                self.i += 1
                 if result:
                     return result
         variable.slot = None
