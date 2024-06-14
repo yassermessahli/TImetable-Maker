@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Reset default table styles */
+table {
+   border-collapse: collapse;
+   width: 100%;
+}
+
+td {
+   display: table-cell;
+   min-width: 220px;
+}
+
+th {
+   max-width: 100px !important;
+}
+
+
+
+/* Style for table header (top line cells) */
+th {
+   background-color: #f0f0f0;
+   /* Light gray background */
+   font-weight: bold;
+   padding: 10px;
+   text-align: left;
+   border-bottom: 1px solid #ddd;
+   /* Bottom border */
+}
+
+/* Alternate row background color for better readability */
+tr:nth-child(even) {
+   background-color: #f9f9f9;
+   /* Light background color for even rows */
+}
+
+/* General styling for table cells */
+td {
+   padding-inline: 10px;
+   padding-block: 5px;
+   text-align: left;
+   border-bottom: 1px solid #c6c6c6;
+   /* Bottom border */
+}
+
+/* Remove double line */
+th,
+td {
+   border-top: none;
+   /* Remove top border */
+}
+
+/* Apply Inter font to all elements inside the table */
+table,
+th,
+td {
+   font-family: 'Inter', sans-serif;
+   text-transform: capitalize;
+}
+
+/* Color 2n lines differently */
+tr:nth-child(2n) {
+   background-color: #f0f0f0;
+}
+
+/* Style for the table header */
+th {
+   background-color: #dcdcdc;
+   /* Light gray background */
+   font-weight: bold;
+   padding: 10px;
+   text-align: left;
+   border-bottom: 1px solid #818181;
+   /* Bottom border */
+}

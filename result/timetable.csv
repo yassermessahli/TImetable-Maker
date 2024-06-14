@@ -1,0 +1,31 @@
+day,group,Slot 1,Slot 2,Slot 3,Slot 4,Slot 5
+1) Sunday,G1,,td Analyse numérique%newline%(Teacher 3),td Réseaux 2%newline%(Teacher 7),,lecture Distributed Architecture & Intensive Computing%newline%(Teacher 6)
+1) Sunday,G2,,td Recherche opérationnelle 2%newline%(Teacher 5),td Distributed Architecture & Intensive Computing%newline%(Teacher 6),,lecture Distributed Architecture & Intensive Computing%newline%(Teacher 6)
+1) Sunday,G3,,td Sécurité%newline%(Teacher 1),td Artificial Intelligence%newline%(Teacher 11),,lecture Distributed Architecture & Intensive Computing%newline%(Teacher 6)
+1) Sunday,G4,tp Artificial Intelligence%newline%(Teacher 13),td Méthodes formelles%newline%(Teacher 2),tp Réseaux 2%newline%(Teacher 9),,lecture Distributed Architecture & Intensive Computing%newline%(Teacher 6)
+1) Sunday,G5,,td Artificial Intelligence%newline%(Teacher 11),td Méthodes formelles%newline%(Teacher 2),,lecture Distributed Architecture & Intensive Computing%newline%(Teacher 6)
+1) Sunday,G6,tp Artificial Intelligence%newline%(Teacher 14),,td Sécurité%newline%(Teacher 1),td Recherche opérationnelle 2%newline%(Teacher 5),lecture Distributed Architecture & Intensive Computing%newline%(Teacher 6)
+2) Monday,G1,tp Artificial Intelligence%newline%(Teacher 12),lecture Analyse numérique%newline%(Teacher 3),td Recherche opérationnelle 2%newline%(Teacher 5),,lecture Artificial Intelligence%newline%(Teacher 11)
+2) Monday,G2,tp Réseaux 2%newline%(Teacher 8),lecture Analyse numérique%newline%(Teacher 3),td Analyse numérique%newline%(Teacher 3),,lecture Artificial Intelligence%newline%(Teacher 11)
+2) Monday,G3,tp Artificial Intelligence%newline%(Teacher 13),lecture Analyse numérique%newline%(Teacher 3),td Méthodes formelles%newline%(Teacher 2),,lecture Artificial Intelligence%newline%(Teacher 11)
+2) Monday,G4,,lecture Analyse numérique%newline%(Teacher 3),td Sécurité%newline%(Teacher 1),,lecture Artificial Intelligence%newline%(Teacher 11)
+2) Monday,G5,tp Artificial Intelligence%newline%(Teacher 14),lecture Analyse numérique%newline%(Teacher 3),tp Réseaux 2%newline%(Teacher 10),,lecture Artificial Intelligence%newline%(Teacher 11)
+2) Monday,G6,,lecture Analyse numérique%newline%(Teacher 3),td Artificial Intelligence%newline%(Teacher 11),,lecture Artificial Intelligence%newline%(Teacher 11)
+3) Tuesday,G1,lecture Recherche opérationnelle 2%newline%(Teacher 5),lecture Sécurité%newline%(Teacher 1),td Méthodes formelles%newline%(Teacher 2),,
+3) Tuesday,G2,lecture Recherche opérationnelle 2%newline%(Teacher 5),lecture Sécurité%newline%(Teacher 1),td Sécurité%newline%(Teacher 1),,
+3) Tuesday,G3,lecture Recherche opérationnelle 2%newline%(Teacher 5),lecture Sécurité%newline%(Teacher 1),td Recherche opérationnelle 2%newline%(Teacher 5),,
+3) Tuesday,G4,lecture Recherche opérationnelle 2%newline%(Teacher 5),lecture Sécurité%newline%(Teacher 1),td Analyse numérique%newline%(Teacher 3),,
+3) Tuesday,G5,lecture Recherche opérationnelle 2%newline%(Teacher 5),lecture Sécurité%newline%(Teacher 1),td Réseaux 2%newline%(Teacher 7),,
+3) Tuesday,G6,lecture Recherche opérationnelle 2%newline%(Teacher 5),lecture Sécurité%newline%(Teacher 1),td Distributed Architecture & Intensive Computing%newline%(Teacher 6),,
+4) Wednesday,G1,lecture Entrepreneuriat%newline%(Teacher 4),,td Distributed Architecture & Intensive Computing%newline%(Teacher 6),td Artificial Intelligence%newline%(Teacher 11),lecture Méthodes formelles%newline%(Teacher 2)
+4) Wednesday,G2,lecture Entrepreneuriat%newline%(Teacher 4),td Artificial Intelligence%newline%(Teacher 11),td Réseaux 2%newline%(Teacher 7),,lecture Méthodes formelles%newline%(Teacher 2)
+4) Wednesday,G3,lecture Entrepreneuriat%newline%(Teacher 4),td Réseaux 2%newline%(Teacher 7),,td Distributed Architecture & Intensive Computing%newline%(Teacher 6),lecture Méthodes formelles%newline%(Teacher 2)
+4) Wednesday,G4,lecture Entrepreneuriat%newline%(Teacher 4),td Distributed Architecture & Intensive Computing%newline%(Teacher 6),,td Réseaux 2%newline%(Teacher 7),lecture Méthodes formelles%newline%(Teacher 2)
+4) Wednesday,G5,lecture Entrepreneuriat%newline%(Teacher 4),,td Sécurité%newline%(Teacher 1),td Analyse numérique%newline%(Teacher 3),lecture Méthodes formelles%newline%(Teacher 2)
+4) Wednesday,G6,lecture Entrepreneuriat%newline%(Teacher 4),td Analyse numérique%newline%(Teacher 3),td Méthodes formelles%newline%(Teacher 2),,lecture Méthodes formelles%newline%(Teacher 2)
+5) Thursday,G1,tp Réseaux 2%newline%(Teacher 8),td Sécurité%newline%(Teacher 1),,lecture Réseaux 2%newline%(Teacher 7),
+5) Thursday,G2,tp Artificial Intelligence%newline%(Teacher 12),td Méthodes formelles%newline%(Teacher 2),,lecture Réseaux 2%newline%(Teacher 7),
+5) Thursday,G3,tp Réseaux 2%newline%(Teacher 9),td Analyse numérique%newline%(Teacher 3),,lecture Réseaux 2%newline%(Teacher 7),
+5) Thursday,G4,td Artificial Intelligence%newline%(Teacher 11),td Recherche opérationnelle 2%newline%(Teacher 5),,lecture Réseaux 2%newline%(Teacher 7),
+5) Thursday,G5,td Recherche opérationnelle 2%newline%(Teacher 5),td Distributed Architecture & Intensive Computing%newline%(Teacher 6),,lecture Réseaux 2%newline%(Teacher 7),
+5) Thursday,G6,tp Réseaux 2%newline%(Teacher 10),td Réseaux 2%newline%(Teacher 7),,lecture Réseaux 2%newline%(Teacher 7),
