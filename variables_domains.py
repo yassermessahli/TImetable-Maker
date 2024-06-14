@@ -1,8 +1,7 @@
-
 from collections import namedtuple
 
 # Define a namedtuple for slots
-Slot = namedtuple('Slot', ['day', 'time'])
+Slot = namedtuple("Slot", ["day", "time"])
 
 # Define the days and the time slots for each day
 days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
@@ -11,11 +10,12 @@ slots_per_day = {
     "Monday": [1, 2, 3, 4, 5],
     "Tuesday": [1, 2, 3],
     "Wednesday": [1, 2, 3, 4, 5],
-    "Thursday": [1, 2, 3, 4, 5]
+    "Thursday": [1, 2, 3, 4, 5],
 }
 
 # Generate all possible slots
 all_slots = [Slot(day, time) for day in days for time in slots_per_day[day]]
+
 
 # Define the class for variables
 class CourseSession:
@@ -28,6 +28,7 @@ class CourseSession:
 
     def __repr__(self):
         return f"{self.group}_{self.course}_{self.session_type}_{self.teacher}"
+
 
 # Define the groups and their courses
 groups = range(1, 7)
@@ -48,18 +49,31 @@ courses = [
     ("Réseaux 2", "tp", ["Teacher 8", "Teacher 9", "Teacher 10"]),
     ("Artificial Intelligence", "lecture", "Teacher 11"),
     ("Artificial Intelligence", "td", "Teacher 11"),
-    ("Artificial Intelligence", "tp", ["Teacher 12", "Teacher 13", "Teacher 14"])
+    ("Artificial Intelligence", "tp", ["Teacher 12", "Teacher 13", "Teacher 14"]),
 ]
+
+# returns the number of sessions assigned to a teacher
+def how_much_teacher_assigned(teacher: str, variables: list) -> int:
+    return [v.teacher for v in variables].count(teacher)
 
 # Create variables for the problem
 variables = []
 for group in groups:
     for course, session_type, teacher in courses:
         if isinstance(teacher, list):  # Handle multiple teachers for TP sessions
+            # there are 3 tp teachers for each tp session, and 6 groups
+            # so each teacher takes 2 groups
             for tp_teacher in teacher:
-                variables.append(CourseSession(group, course, session_type, tp_teacher))
+                # if the teacher is assigned to less than 2 sessions, assign him to the current session
+                if how_much_teacher_assigned(tp_teacher, variables) < 2:
+                    variables.append(CourseSession(group, course, session_type, tp_teacher))
+                    break
         else:
             variables.append(CourseSession(group, course, session_type, teacher))
 
 
-print(variables)
+# print only tp sessions
+print("== TP Sessions: ==")
+for v in variables:
+    if v.session_type == "tp":
+        print(v)
