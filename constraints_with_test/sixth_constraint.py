@@ -14,16 +14,12 @@ def max_two_days_per_teacher(variables: list):
             # If the teacher already has two days assigned, return False
             if len(set(teacher_days[teacher])) > 2:
                 return False
+            
             # Otherwise, add the current day to the list of assigned days for the teacher
-            
-            
-
         else:
             # If the teacher has no assigned days, initialize the list with the current day
             teacher_days[teacher] = [var.slot.day]
-
         print(teacher_days[teacher])
-
     return True
 
 

@@ -1,7 +1,8 @@
 class CSP:
     """The implementation of csp problem and its solution"""
+    i = 0
     
-    def __init__(self, variables: list, domains: dict, constraints: list) -> None:
+    def __init__(self, variables: list, domains, constraints: list) -> None:
         self.variables = variables
         self.domains = domains
         self.constraints = constraints
@@ -11,37 +12,49 @@ class CSP:
         return self.variables
     
     def is_complete(self) -> bool:
-        return len(self.assignment) == len(self.variables)
+        for var in self.variables:
+            if var.slot is None:
+                return False
+        return True
     
     def select_unassigned_variable(self):
         for var in self.variables:
-            if var not in self.assignment:
+            if var.slot is None:
                 return var
-        return None
     
-    def is_consistent(self, var, value) -> bool:
+    def is_consistent(self) -> bool:
         for constraint in self.constraints:
-            if not constraint(self.assignment, var, value):
+            if not constraint(self.variables):
                 return False
         return True
     
     
     def domain_values(self, var) -> list:
-        return self.domains[var]
+        if isinstance(self.domains, dict):
+            return self.domains[var]
+        else:
+            return self.domains
     
     
     def backtrack(self):
         if self.is_complete():
-            return self.assignment
+            return True
         variable = self.select_unassigned_variable()
         domain = self.domain_values(variable)
         for value in domain:
-            if self.is_consistent(variable, value):
-                self.assignment[variable] = value
+            variable.slot = value
+            if self.is_consistent():
                 result = self.backtrack()
-                if result is not None:
+                self.i += 1
+                if result:
                     return result
-                del self.assignment[variable]
-        return None
+        variable.slot = None
+        return False
     
-    
+    def solve(self):
+        result = self.backtrack()
+        print(f"Solution Found: {result}")
+        if result:
+            for var in self.variables:
+                print(var)
+        

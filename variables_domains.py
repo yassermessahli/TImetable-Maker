@@ -30,26 +30,28 @@ class CourseSession:
     def __repr__(self):
         return f"{self.group}_{self.course}_{self.session_type}_{self.teacher}"
 
+    def __str__(self):
+        return f"Group: {self.group}, Course: {self.course}, Type: {self.session_type}, Teacher: {self.teacher}, Slot: {self.slot}"
 
 # Define the groups and their courses
 groups = range(1, 7)
 courses = [
     ("Sécurité", "lecture", "Teacher 1"),
-    ("Sécurité", "td", "Teacher 1"),
     ("Méthodes formelles", "lecture", "Teacher 2"),
-    ("Méthodes formelles", "td", "Teacher 2"),
     ("Analyse numérique", "lecture", "Teacher 3"),
-    ("Analyse numérique", "td", "Teacher 3"),
     ("Entrepreneuriat", "lecture", "Teacher 4"),
     ("Recherche opérationnelle 2", "lecture", "Teacher 5"),
-    ("Recherche opérationnelle 2", "td", "Teacher 5"),
     ("Distributed Architecture & Intensive Computing", "lecture", "Teacher 6"),
-    ("Distributed Architecture & Intensive Computing", "td", "Teacher 6"),
     ("Réseaux 2", "lecture", "Teacher 7"),
-    ("Réseaux 2", "td", "Teacher 7"),
-    ("Réseaux 2", "tp", ["Teacher 8", "Teacher 9", "Teacher 10"]),
     ("Artificial Intelligence", "lecture", "Teacher 11"),
+    ("Sécurité", "td", "Teacher 1"),
+    ("Méthodes formelles", "td", "Teacher 2"),
+    ("Analyse numérique", "td", "Teacher 3"),
+    ("Recherche opérationnelle 2", "td", "Teacher 5"),
+    ("Distributed Architecture & Intensive Computing", "td", "Teacher 6"),
+    ("Réseaux 2", "td", "Teacher 7"),
     ("Artificial Intelligence", "td", "Teacher 11"),
+    ("Réseaux 2", "tp", ["Teacher 8", "Teacher 9", "Teacher 10"]),
     ("Artificial Intelligence", "tp", ["Teacher 12", "Teacher 13", "Teacher 14"]),
 ]
 
@@ -74,7 +76,7 @@ for group in groups:
 
 
 # print only tp sessions
-print("== TP Sessions: ==")
-for v in variables:
-    if v.session_type == "tp":
-        print(v)
+# print("== TP Sessions: ==")
+# for v in variables:
+#     if v.session_type == "tp":
+#         print(v)

@@ -1,31 +1,32 @@
 from csp import CSP
+from constraints import *
+from variables_domains import variables, all_slots
+from random import shuffle
+import time
 
+# Setup
+variables = variables
+domains = all_slots
+constraints = [no_more_than_three_successive, 
+            #    no_same_slot_different_courses, 
+            #    no_same_slot_lectures,
+               same_slot_for_lectures_of_same_course,
+            #    no_same_slot_different_groups_same_td,
+            #    max_two_days_per_teacher,
+               ]
 
-def constraint1(assignment, var, value):
-    return (var == "A" and value != assignment.get("B", None)) or (var == "B" and value != assignment.get("A", None)) or var in ["C", "D"]
+start_time = time.time()
 
+print("shuffling...")
+shuffle(variables)
+shuffle(domains)
+shuffle(constraints)
 
-def constraint2(assignment, var, value):
-    return (var == "A" and value == assignment.get("D", value)) or (var == "D" and value == assignment.get("A", value)) or var in ["B", "C"]
-
-def constraint3(assignment, var, value):
-    return (var == "C" and value < assignment.get("D", value+1)) or (var == "D" and value > assignment.get("C", value-1)) or var in ["A", "B"]
-
-def constraint4(assignment, var, value):
-    return (var == "C" and value < assignment.get("B", value+1)) or (var == "B" and value > assignment.get("C", value-1)) or var in ["A", "D"]
-
-
-
-variables = ['A', 'B', 'C', 'D']
-domains = {
-    'A': [1, 2, 3],
-    'B': [1, 2, 3],
-    'C': [1, 2, 3],
-    'D': [1, 2, 3],
-}
-constraints = [constraint1, constraint2, constraint3, constraint4]
-
-
+print("solving...\n")
 csp = CSP(variables, domains, constraints)
-solution = csp.backtrack()
-print(solution)
+csp.solve()
+print(f"number of sub-programs: {csp.i}")
+
+end_time = time.time()
+execution_time = end_time - start_time
+print(f"code run with execution time: {round(execution_time, 4)} seconds")
