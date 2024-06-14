@@ -1,4 +1,5 @@
 from collections import namedtuple
+from pprint import pprint
 
 # Define a namedtuple for slots
 Slot = namedtuple("Slot", ["day", "time"])
