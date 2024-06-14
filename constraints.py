@@ -50,7 +50,7 @@ def no_same_slot_different_courses(variables: list):
     """
     check if the same slot is not allocated to different courses for the same group
     """
-    # Do NOT INCLUDE SAME OBJECTS AS INPUTS BRUH
+    # Do NOT INCLUDE SAME OBJECTS AS INPUTS
     # Create a dictionary to track groups and their allocated slots
     group_slots = {}
     for var in variables:
