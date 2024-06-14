@@ -1,19 +1,19 @@
-def same_slot_for_lectures_of_same_course(args):
+def same_slot_for_lectures_of_same_course(variables: list):
     """
     Ensure that lectures of the same course are in the same slots across all groups.
     """
     
     course_slots = {}
 
-    for arg in args:
+    for var in variables:
         
-        if arg.session_type == "lecture":
-            if arg.course in course_slots:
+        if var.session_type == "lecture":
+            if var.course in course_slots:
                 
-                if arg.slot != course_slots[arg.course]:
+                if var.slot != course_slots[var.course]:
                     return False
             else:
                 
-                course_slots[arg.course] = arg.slot
+                course_slots[var.course] = var.slot
 
     return True

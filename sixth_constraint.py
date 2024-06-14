@@ -1,16 +1,16 @@
 from variables_domains import Slot, days, slots_per_day, CourseSession , all_slots , groups , courses , variables
 
-def max_two_days_per_teacher(args):
+def max_two_days_per_teacher(variables: list):
     # Create a dictionary to track the days each teacher is assigned
     teacher_days = {}
 
-    for arg in args:
+    for var in variables:
         # Get the teacher of the current CourseSession
-        teacher = arg.teacher
+        teacher = var.teacher
         
         # Check if the teacher already has days assigned
         if teacher in teacher_days:
-            teacher_days[teacher].append(arg.slot.day)
+            teacher_days[teacher].append(var.slot.day)
             # If the teacher already has two days assigned, return False
             if len(set(teacher_days[teacher])) > 2:
                 return False
@@ -20,7 +20,7 @@ def max_two_days_per_teacher(args):
 
         else:
             # If the teacher has no assigned days, initialize the list with the current day
-            teacher_days[teacher] = [arg.slot.day]
+            teacher_days[teacher] = [var.slot.day]
 
         print(teacher_days[teacher])
 

@@ -1,17 +1,15 @@
-from variables_domains import Slot, days, slots_per_day, CourseSession , all_slots , groups , courses , variables
+from variables_domains import Slot, variables
 
-def no_more_than_three_successive(args):
-    # Extract the slots from the CourseSession objects
-    slots = [arg.slot for arg in args]
-    
+def no_more_than_three_successive(variables: list):
     # Group slots by group
     slots_by_group = {}
-    for arg in args:
-        if arg.slot.day not in slots_by_group:
-            slots_by_group[arg.slot.day] = {}
-        if arg.group not in slots_by_group[arg.slot.day]:
-            slots_by_group[arg.slot.day][arg.group] = []
-        slots_by_group[arg.slot.day][arg.group].append(arg.slot.time)
+    for var in variables:
+        if var.slot is not None:
+            if var.slot.day not in slots_by_group:
+                slots_by_group[var.slot.day] = {}
+            if var.group not in slots_by_group[var.slot.day]:
+                slots_by_group[var.slot.day][var.group] = []
+            slots_by_group[var.slot.day][var.group].append(var.slot.time)
     
     # Check each group's slots for each day
     for day, groups in slots_by_group.items():

@@ -2,28 +2,26 @@ from variables_domains import Slot, days, slots_per_day, CourseSession , all_slo
 
 
 
-def no_same_slot_different_courses(args):
+def no_same_slot_different_courses(variables: list):
     """
-    we are going to check if the same slot is not allocated to different courses for the same group
+    check if the same slot is not allocated to different courses for the same group
     """
     # Do NOT INCLUDE SAME OBJECTS AS INPUTS BRUH
     # Create a dictionary to track groups and their allocated slots
     group_slots = {}
-    
-    
-    for arg in args:
+    for var in variables:
         
         # Check if the group's slot is already in the dictionary
-        if arg.group in group_slots:
-            if arg.slot in group_slots[arg.group]:
+        if var.group in group_slots:
+            if var.slot in group_slots[var.group]:
                 # If the slot is already allocated to another course for the same group, return False
                 return False
             else:
                 # Otherwise, record the slot for the group
-                group_slots[arg.group].append(arg.slot)
+                group_slots[var.group].append(var.slot)
         else:
             # Initialize the group's slots list
-            group_slots[arg.group] = [arg.slot]
+            group_slots[var.group] = [var.slot]
                 
     return True
 
